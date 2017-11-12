@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+	<title></title>
+	<script type="text/javascript">
+		function criaTabuada(){
+			var num1 = '0';
+			var num2 = 0;
+			var teste= ['a','b','c','d','e','f','g','k','z','m','t'];
+				for (var i = 1; i <= 9; i++) {
+					num1 = i;
+					for (var v = 1; v <= 10; v++) {
+						num2=v;
+						var res = num1*num2;
+						var id = num1+teste[num2];
+						var n = document.createElement("p");
+						n.id = id;
+						if (num2 == 10) {
+							n.style.margin = '7px 7px 100px 7px';
+						}else{
+							n.style.margin = '7px';
+						}
+						document.getElementById('tabuada').appendChild(n);
+						console.log(i+" x "+v);	
+						document.getElementById(id).innerHTML = num1 + " x "+ num2 +"= "+res;
+					}
+				}
+			}
+	</script>
+</head>
+<body onload="criaTabuada()">
+	<div id="tabuada">
+	</div>
+</body>
+</html>
